@@ -4,9 +4,9 @@ function removeUpgradeButton() {
         ".cursor-pointer.text-sm.hover\\:bg-gray-800.rounded-md"
     )[2]; //gets the "upgrade to plus" button element
 
-    if (upgradeToPlusButton) {
-        upgradeToPlusButton.remove(); 
-        //if exists in page remove it
+    if (upgradeToPlusButton && upgradeToPlusButton.role !== "menuitem") {
+        upgradeToPlusButton.remove();
+        //if exists in page and isn't a button in the profile menu then remove it
     }
 }
 
@@ -15,10 +15,10 @@ function updateChatGptIcons() {
         ".relative.p-1.rounded-sm.h-\\[30px\\].w-\\[30px\\].text-white.flex.items-center.justify-center"
     ); //gets an array of elements of chatgpt icons from responses
 
-    if (ChatGptIcons) { 
+    if (ChatGptIcons) {
         //if they are in the page
         ChatGptIcons.forEach((element) => {
-            element.style.backgroundColor = "#715fde"; 
+            element.style.backgroundColor = "#715fde";
             //replace the background of each one of them to the chatgpt-purple color
         });
     }
@@ -30,13 +30,13 @@ function changeButtonBackgroundColor() {
         ".enabled\\:bg-brand-purple.text-white.transition-colors.disabled\\:opacity-40"
     ); //get the send button element
 
-    if (button) { 
+    if (button) {
         //if the button exists on the page
-        const style = button.getAttribute("style"); 
+        const style = button.getAttribute("style");
         //gets it's style
-        if (style && style.includes("background-color")) { 
+        if (style && style.includes("background-color")) {
             //if the style includes a background-color
-            button.style.backgroundColor = "#715fde"; 
+            button.style.backgroundColor = "#715fde";
             //change the background color to chatgpt-purple color
         }
     }
