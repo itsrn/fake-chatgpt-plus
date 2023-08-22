@@ -2,7 +2,7 @@ function removeUpgradeButton() {
   const upgradeToPlusButton = document.querySelectorAll(
     ".flex.px-3.min-h-\\[44px\\].py-1.items-center.gap-3.transition-colors.duration-200.text-white.cursor-pointer",
     ".text-sm.hover\\:bg-gray-800.rounded-md"
-  )[0]; //gets the "upgrade to plus" button element
+  )[2]; //gets the "upgrade to plus" button element
 
   if (upgradeToPlusButton && upgradeToPlusButton.role !== "menuitem") {
     upgradeToPlusButton.remove();
