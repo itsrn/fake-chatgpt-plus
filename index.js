@@ -1,45 +1,45 @@
 function removeUpgradeButton() {
-    const upgradeToPlusButton = document.querySelectorAll(
-        ".flex.p-3.items-center.gap-3.transition-colors.duration-200.text-white",
-        ".cursor-pointer.text-sm.hover\\:bg-gray-800.rounded-md"
-    )[2]; //gets the "upgrade to plus" button element
+  const upgradeToPlusButton = document.querySelectorAll(
+    ".flex.px-3.min-h-\\[44px\\].py-1.items-center.gap-3.transition-colors.duration-200.text-white.cursor-pointer",
+    ".text-sm.hover\\:bg-gray-800.rounded-md"
+  )[0]; //gets the "upgrade to plus" button element
 
-    if (upgradeToPlusButton && upgradeToPlusButton.role !== "menuitem") {
-        upgradeToPlusButton.remove();
-        //if exists in page and isn't a button in the profile menu then remove it
-    }
+  if (upgradeToPlusButton && upgradeToPlusButton.role !== "menuitem") {
+    upgradeToPlusButton.remove();
+    //if exists in page and isn't a button in the profile menu then remove it
+  }
 }
 
 function updateChatGptIcons() {
-    const ChatGptIcons = document.querySelectorAll(
-        ".relative.p-1.rounded-sm.h-\\[30px\\].w-\\[30px\\].text-white.flex.items-center.justify-center"
-    ); //gets an array of elements of chatgpt icons from responses
+  const ChatGptIcons = document.querySelectorAll(
+    ".relative.p-1.rounded-sm.h-\\[30px\\].w-\\[30px\\].text-white.flex.items-center.justify-center"
+  ); //gets an array of elements of chatgpt icons from responses
 
-    if (ChatGptIcons) {
-        //if they are in the page
-        ChatGptIcons.forEach((element) => {
-            element.style.backgroundColor = "#715fde";
-            //replace the background of each one of them to the chatgpt-purple color
-        });
-    }
+  if (ChatGptIcons) {
+    //if they are in the page
+    ChatGptIcons.forEach((element) => {
+      element.style.backgroundColor = "#715fde";
+      //replace the background of each one of them to the chatgpt-purple color
+    });
+  }
 }
 
 function changeButtonBackgroundColor() {
-    const button = document.querySelector(
-        ".absolute.p-1.rounded-md.right-2.disabled\\:text-gray-400",
-        ".enabled\\:bg-brand-purple.text-white.transition-colors.disabled\\:opacity-40"
-    ); //get the send button element
+  const button = document.querySelector(
+    ".absolute.p-1.rounded-md.right-2.disabled\\:text-gray-400",
+    ".enabled\\:bg-brand-purple.text-white.transition-colors.disabled\\:opacity-40"
+  ); //get the send button element
 
-    if (button) {
-        //if the button exists on the page
-        const style = button.getAttribute("style");
-        //gets it's style
-        if (style && style.includes("background-color")) {
-            //if the style includes a background-color
-            button.style.backgroundColor = "#715fde";
-            //change the background color to chatgpt-purple color
-        }
+  if (button) {
+    //if the button exists on the page
+    const style = button.getAttribute("style");
+    //gets it's style
+    if (style && style.includes("background-color")) {
+      //if the style includes a background-color
+      button.style.backgroundColor = "#715fde";
+      //change the background color to chatgpt-purple color
     }
+  }
 }
 
 /*
@@ -59,9 +59,9 @@ function updateHeaderText() {
 */
 
 function handleMutations() {
-    removeUpgradeButton();
-    changeButtonBackgroundColor();
-    updateChatGptIcons();
+  removeUpgradeButton();
+  changeButtonBackgroundColor();
+  updateChatGptIcons();
 }
 
 const observer = new MutationObserver(handleMutations);
@@ -70,9 +70,9 @@ const observer = new MutationObserver(handleMutations);
 observer.observe(document.body, { childList: true, subtree: true });
 
 if (document.readyState !== "loading") {
-    //if the page isn't loading anymore run the functions
-    handleMutations();
+  //if the page isn't loading anymore run the functions
+  handleMutations();
 } else {
-    //if the page is still loading wait to finish and then run the functions
-    document.addEventListener("DOMContentLoaded", handleMutations);
+  //if the page is still loading wait to finish and then run the functions
+  document.addEventListener("DOMContentLoaded", handleMutations);
 }
