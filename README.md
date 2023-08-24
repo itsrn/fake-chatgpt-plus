@@ -38,7 +38,9 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 Give a ⭐️ if you likes this project and want to support me!
 
 ## Version History
-* 0.4.2 *(Supported and recommended)*
+* 0.4.4 *(Supported and recommended)*
+  *  Fixed ["Upgrade to plus" button to stop showing](https://github.com/itsrn/fake-chatgpt-plus/issues/3)
+* 0.4.2 *(Not supported)*
     * Fixed [Profile buttons doesn't appear](https://github.com/itsrn/fake-chatgpt-plus/issues/1).
 * 0.4.0 *(Not supported)*
     * Initial Release.
