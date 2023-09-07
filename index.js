@@ -12,7 +12,7 @@ function removeUpgradeButton() {
 
 function updateChatGptIcons() {
   const ChatGptIcons = document.querySelectorAll(
-    ".relative.p-1.rounded-sm.h-\\[30px\\].w-\\[30px\\].text-white.flex.items-center.justify-center"
+    ".relative.p-1.rounded-sm.text-white.flex.items-center"
   ); //gets an array of elements of chatgpt icons from responses
 
   if (ChatGptIcons) {
