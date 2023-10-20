@@ -53,3 +53,6 @@ Give a ⭐️ if you likes this project and want to support me!
 
 Copyright © 2023 [Ron Nuss](https://github.com/itsrn).<br />
 This project is [MIT](https://github.com/itsrn/fake-chatgpt-plus/blob/main/LICENSE) licensed.
+
+***
+_This README was generated with [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
